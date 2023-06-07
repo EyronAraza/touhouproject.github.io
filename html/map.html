@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map | Touhou Project</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../css/map-main.css">
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <!-- Link to JavaScript -->
+    <script defer src="../js/render-navbar-footer.js"></script>
+</head>
+
+<body>
+    <!-- Create Navigation Bar through JS -->
+    <div id="navbar-container"></div>
+
+    <!-- CONTENT CONTAINER -->
+    <div id="container-content">
+        <!-- Background image -->
+        <div id="img-background"></div>
+
+        <!-- Background Coverage -->
+        <div id="background-coverage"></div>
+
+        <!-- Header and Text -->
+        <h1 id="h1-map">MAP</h1>
+        <p id="p-map">Click on any of the location to know its information
+            <br>
+            <span id="p-map-mobile-user">(Drag the map to navigate)</span>
+        </p>
+
+        <!-- Map Container -->
+        <div id="container-map-screen">
+            <div id="container-map">
+                <!-- Image of Touhou Map -->
+                <img src="../img/map/touhou-map.jpg" id="img-map" usemap="#image-map" />
+
+                <!-- Mapping Image Locations -->
+                <map name="image-map" id="map-element">
+                    <area target="_blank" alt="Gensokyo" title="Gensokyo" href="https://en.touhouwiki.net/wiki/Gensokyo"
+                        coords="125,784,336,786,345,834,129,841,124,816" shape="poly">
+                    <area target="_blank" alt="Komachi's Ferry" title="Komachi's Ferry"
+                        href="https://en.touhouwiki.net/wiki/Komachi_Onozuka" coords="87,605,179,596,171,635,97,644"
+                        shape="poly">
+                    <area target="_blank" alt="Nameless Hill" title="Nameless Hill"
+                        href="https://en.touhouwiki.net/wiki/Nameless_Hill" coords="512,722,673,710,671,743,519,751"
+                        shape="poly">
+                    <area target="_blank" alt="Bamboo Forest" title="Bamboo Forest"
+                        href="https://en.touhouwiki.net/wiki/Bamboo_Forest_of_the_Lost"
+                        coords="958,790,1116,784,1120,809,955,816" shape="poly">
+                    <area target="_blank" alt="Eientei" title="Eientei" href="https://en.touhouwiki.net/wiki/Eientei"
+                        coords="1055,694,1140,680,1164,753,1074,765" shape="poly">
+                    <area target="_blank" alt="Road of Liminality" title="Road of Liminality"
+                        href="https://en.touhouwiki.net/wiki/Road_of_Liminality"
+                        coords="471,626,661,609,659,637,472,649" shape="poly">
+                    <area target="_blank" alt="Human Village" title="Human Village"
+                        href="https://en.touhouwiki.net/wiki/Human_Village" coords="767,436,925,434,925,534,780,587"
+                        shape="poly">
+                    <area target="_blank" alt="Hakurei Shrine" title="Hakurei Shrine"
+                        href="https://en.touhouwiki.net/wiki/Hakurei_Shrine"
+                        coords="1104,278,1176,278,1192,326,1112,349" shape="poly">
+                    <area target="_blank" alt="Makai" title="Makai" href="https://en.touhouwiki.net/wiki/Makai"
+                        coords="1133,229,1190,218,1188,255,1130,255" shape="poly">
+                    <area target="_blank" alt="Kourindou" title="Kourindou"
+                        href="https://en.touhouwiki.net/wiki/Kourindou" coords="871,303,960,297,969,321,871,333"
+                        shape="poly">
+                    <area target="_blank" alt="Forest of Magic" title="Forest of Magic"
+                        href="https://en.touhouwiki.net/wiki/Forest_of_Magic"
+                        coords="899,223,1038,212,1023,244,1007,268,976,277,907,267,899,247,897,238" shape="poly">
+                    <area target="_blank" alt="Marisa's House" title="Marisa's House"
+                        href="https://en.touhouwiki.net/wiki/Marisa_Kirisame" coords="934,147,1034,140,1031,197,966,202"
+                        shape="poly">
+                    <area target="_blank" alt="Alice's House" title="Alice's House"
+                        href="https://en.touhouwiki.net/wiki/Alice_Margatroid" coords="741,219,849,222,845,237,752,241"
+                        shape="poly">
+                    <area target="_blank" alt="Yuka's Field" title="Yuka's Field"
+                        href="https://en.touhouwiki.net/wiki/Yuuka_Kazami" coords="565,183,677,180,659,241,591,250"
+                        shape="poly">
+                    <area target="_blank" alt="Road of Reconsideration" title="Road of Reconsideration"
+                        href="https://en.touhouwiki.net/wiki/Road_of_Reconsideration"
+                        coords="451,142,656,149,662,168,458,163" shape="poly">
+                    <area target="_blank" alt="Meunzuka" title="Meunzuka" href="https://en.touhouwiki.net/wiki/Muenzuka"
+                        coords="503,43,622,31,688,138,480,127" shape="poly">
+                    <area target="_blank" alt="Moriya Shrine" title="Moriya Shrine"
+                        href="https://en.touhouwiki.net/wiki/Moriya_Shrine" coords="383,205,430,202,459,257,376,261"
+                        shape="poly">
+                    <area target="_blank" alt="Youkai Forest" title="Youkai Forest"
+                        href="https://touhou.fandom.com/wiki/Great_Youkai_Forest"
+                        coords="476,296,555,296,589,344,502,351" shape="poly">
+                    <area target="_blank" alt="Youkai Mountain" title="Youkai Mountain"
+                        href="https://en.touhouwiki.net/wiki/Youkai_Mountain" coords="235,119,336,109,378,164,241,164"
+                        shape="poly">
+                    <area target="_blank" alt="Giant Toad's Pond" title="Giant Toad's Pond"
+                        href="https://en.touhouwiki.net/wiki/Giant_Toad%27s_Pond"
+                        coords="137,248,235,236,237,269,153,276" shape="poly">
+                    <area target="_blank" alt="Misty Lake" title="Misty Lake"
+                        href="https://en.touhouwiki.net/wiki/Misty_Lake" coords="259,310,316,310,352,358,259,356"
+                        shape="poly">
+                    <area target="_blank" alt="Sanzu River" title="Sanzu River"
+                        href="https://en.touhouwiki.net/wiki/Sanzu_River" coords="90,389,153,389,205,441,106,438,93,422"
+                        shape="poly">
+                    <area target="_blank" alt="Higan" title="Higan" href="https://en.touhouwiki.net/wiki/Higan"
+                        coords="116,500,183,498,196,532,119,535" shape="poly">
+                    <area target="_blank" alt="Hakugyokurou" title="Hakugyokurou"
+                        href="https://en.touhouwiki.net/wiki/Hakugyokurou" coords="8,455,118,453,116,485,19,510"
+                        shape="poly">
+                    <area target="_blank" alt="Scarlet Devil Manor" title="Scarlet Devil Manor"
+                        href="https://en.touhouwiki.net/wiki/Scarlet_Devil_Mansion"
+                        coords="430,323,521,422,459,445,387,420" shape="poly">
+                </map>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create footer through JS -->
+    <div id="footer-container"></div>
+</body>
+
+</html>

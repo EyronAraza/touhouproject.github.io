@@ -1,0 +1,305 @@
+@import 'main';
+
+$container-content-transparency: 0.4;
+
+// Idle animation for Images of Reimu and Marisa
+@mixin animate-reimu-marisa($anim-no, $rotate-1, $rotate-2, $duration, $start-x, $start-y, $end-x, $end-y, $duration2) {
+    @keyframes anim-reimu-marisa#{$anim-no} {
+        0% {
+            transform: rotateZ(0deg);
+        }
+
+        25% {
+            transform: rotateZ($rotate-1);
+        }
+
+        75% {
+            transform: rotateZ($rotate-2);
+        }
+
+        100% {
+            transform: rotateZ(0deg);
+        }
+    }
+
+    @keyframes entrance-1#{$anim-no} {
+        from {
+            transform: translate3d($start-x, $start-y, 0);
+            opacity: 0;
+        }
+
+        to {
+            transform: translate3d($end-x, $end-y, 0);
+            opacity: 1;
+        }
+    }
+
+    animation: anim-reimu-marisa#{$anim-no} $duration infinite ease-in-out 2s,
+    entrance-1#{$anim-no} $duration2;
+}
+
+// Animate entrance items
+@mixin animate-entrance($anim-no, $start-x, $start-y, $end-x, $end-y, $duration, $delay) {
+    animation: entrance#{$anim-no} $duration $delay forwards;
+
+    @keyframes entrance#{$anim-no} {
+        from {
+            transform: translate3d($start-x, $start-y, 0);
+            opacity: 0;
+        }
+
+        to {
+            transform: translate3d($end-x, $end-y, 0);
+            opacity: 1;
+        }
+    }
+}
+
+/* VIDEO BACKGROUND */
+#container-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* PARALLAX LAYERS CONTAINER */
+#container-parallax {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    // Text container
+    #parax-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 20px 0;
+        z-index: 1;
+        @include animate-entrance(1, 0, -30%, 0, 0, 2s, 0ms);
+
+        // Welcome Header
+        #h1-welcome {
+            font-weight: bold;
+            color: white;
+            font-size: 5rem;
+            text-shadow: 3px 3px black;
+            line-height: 100px;
+            pointer-events: none;
+
+            #h1-welcome-span {
+                color: #9C001F;
+                -webkit-text-stroke: 3px white;
+            }
+        }
+
+        // Text
+        p {
+            color: white;
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-shadow: 0px 0px 15px black;
+        }
+
+        // Button
+        #btn-get-started {
+            background-color: #9C001F;
+            color: white;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin: 0 280px;
+            border: 0px;
+            border-radius: 40px;
+            box-shadow: 2px 2px 2px 0px black;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &:hover {
+                background-color: lighten(#9C001F, 15%);
+            }
+        }
+    }
+
+    // Wave pattern underneath
+    #parax-wave {
+        display: none;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 40px;
+        z-index: 1;
+        opacity: $container-content-transparency;
+        filter: brightness(0%);
+    }
+
+    // Divider underneath
+    #parax-gradient-divider {
+        display: none;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 40px;
+        z-index: 1;
+        background: linear-gradient(0deg, rgba(0, 0, 0, $container-content-transparency) 42%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    // Sakura tree
+    #parax-sakura-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include animate-entrance(2, -20%, -20%, 0, 0, 2s, 0ms);
+    }
+
+    // Sakura tree
+    #parax-sakura-right {
+        position: absolute;
+        transform: rotateY(180deg);
+        top: 0;
+        right: 0;
+        @include animate-entrance(3, 20%, -20%, 0, 0, 2s, 0ms);
+    }
+
+    // Image Reimu
+    #parax-reimu {
+        position: absolute;
+        bottom: -300px;
+        left: -250px;
+        @include animate-reimu-marisa(1, 5deg, -5deg, 10s, -20%, 10%, 0, 0, 2s);
+    }
+
+    // Image Marisa
+    #parax-marisa {
+        position: absolute;
+        bottom: -360px;
+        right: -120px;
+        @include animate-reimu-marisa(2, -5deg, 5deg, 10s, 20%, 10%, 0, 0, 2s);
+    }
+}
+
+/* CONTAINER CONTENT: Contains all kinds of content */
+#container-content {
+    position: relative;
+    background-color: rgba(0, 0, 0, $container-content-transparency);
+    width: 100%;
+    height: auto;
+}
+
+$box-header-colors: #FF0000, #1E90FF, #663399, #228B22;
+
+/* CONTAINER BOXES: Contains all boxes with info */
+#container-boxes {
+    padding: 80px 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+
+    // Style all boxes
+    .box {
+        display: flex;
+        padding: 20px;
+        background-color: white;
+        border-radius: 20px;
+        width: 75%;
+        height: auto;
+        overflow: hidden;
+
+        // Identify flex items size proportions 
+        .box-info {
+            flex: 2;
+        }
+
+        .container-box-img {
+            flex: 1;
+        }
+    }
+
+    // Loop through each boxes
+    @for $i from 1 through length($box-header-colors) {
+        .box:nth-child(#{$i}) {
+
+            // If statement for changing flex direction for each box depending on even and odd values
+            // Even number will be Row reverse
+            @if $i % 2==0 {
+                flex-direction: row-reverse;
+            }
+
+            // Odd number will be Row (default flex direction)
+            @else {
+                flex-direction: row;
+            }
+
+            // Box's Information
+            .box-info {
+
+                // Each heading gets different color
+                h1 {
+                    font-size: 2.5rem;
+                    color: nth($box-header-colors, $i)
+                }
+
+                p {
+                    font-size: 1.2rem;
+
+                    // Each span text in paragraph gets different color
+                    #highlight-text-info {
+                        color: nth($box-header-colors, $i);
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            // Container that contains box's image
+            .container-box-img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                // Box's image
+                .box-img {
+                    width: 250px;
+                    height: auto;
+                    border-radius: 10px;
+                    filter: drop-shadow(0px 0px 4px black);
+                    transition: 1s;
+                }
+
+                // Hover over container image
+                &:hover {
+                    .box-img {
+                        transform: rotateY(360deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* For Tablet screens (over 480px and under 800px) */
+@import 'home-parallax-tablet';
+@import 'home-content-tablet';
+
+/* For Mobile screens (under 480px) */
+@import 'home-parallax-phone';
+@import 'home-content-phone';

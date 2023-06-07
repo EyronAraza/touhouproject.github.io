@@ -1,0 +1,10 @@
+/* For Tablet screens (over 480px and under 800px) */
+@media screen and (min-width: 480px) and (max-width: 800px) {
+    #container-boxes {
+        .box {
+            .box-info {
+                flex: 1;
+            }
+        }
+    }
+}

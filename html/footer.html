@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- DIVIDER -->
+    <div id="divider-gradientcolor"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h1>My Contact</h1>
+
+        <!-- SOCIAL MEDIA CONTAINER -->
+        <div id="container-social-media">
+            <!-- Discord -->
+            <div class="btn-social-media btn-discord" onmouseout="changeTextOnHover('text-discord', 'Discord')"
+                onmouseover="changeTextOnHover('text-discord', 'Norye#0692')">
+                <img class="icon-social-media icon-discord" src="../img/footer/icon-discord.png" alt="discord">
+                <p class="text-social-media" id="text-discord">Discord</p>
+                <p class="text-social-media-active" id="text-discord-acc">Norye#0692</p>
+                <!-- text active for mobile only -->
+            </div>
+
+            <!-- Gmail -->
+            <div class="btn-social-media btn-gmail" onmouseout="changeTextOnHover('text-gmail', 'Gmail')"
+                onmouseover="changeTextOnHover('text-gmail', 'eyron@gmail.com')">
+                <img class="icon-social-media icon-gmail" src="../img/footer/icon-gmail.png" alt="discord">
+                <p class="text-social-media" id="text-gmail">Gmail</p>
+                <p class="text-social-media-active">eyron@gmail.com</p>
+            </div>
+
+            <!-- Instagram -->
+            <div class="btn-social-media btn-instagram" onmouseout="changeTextOnHover('text-instagram', 'Instagram')"
+                onmouseover="changeTextOnHover('text-instagram', '@eyr.nn')">
+                <img class="icon-social-media icon-instagram" src="../img/footer/icon-instagram.png" alt="discord">
+                <p class="text-social-media" id="text-instagram">Instagram</p>
+                <p class="text-social-media-active">@eyr.nn</p>
+            </div>
+        </div>
+
+        <!-- Go to Top button -->
+        <div id="back-button">
+            <a href="#">Go Back to Top</a>
+        </div>
+
+        <!-- LANDSCAPE STUFFS -->
+        <div id="container-landscape">
+            <img class="img-sakuras img-sakura-1" src="../img/footer/animated-sakura-tree.gif" alt="sakura-1">
+            <img class="img-sakuras img-sakura-2" src="../img/footer/animated-sakura-tree.gif" alt="sakura-2">
+            <img id="img-reimu-walks" src="../img/footer/reimu-walks.gif" alt="walking reimu">
+
+            <!-- Ground Option 1: image only (not infinite in width) -->
+            <img id="img-ground" src="../img/footer/ground.png" alt="ground">
+
+            <!-- Ground Option 2: infinite ground -->
+            <div id="landscape-ground"></div>
+
+            <!-- Copyright Holders -->
+            <p>©Eyron Araza 2023
+                <br>
+                ©Team Shanghai Alice 2023
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

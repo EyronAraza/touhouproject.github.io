@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+
+    // Main font 
+    font-family: 'Poppins', sans-serif;
+
+    // Scrollbar customisation
+    scrollbar-width: thin;
+    scrollbar-color: darkred black;
+}
+
+// Background color of entire page
+body {
+    background-color: black;
+}
+
+// html tag
+html {
+    scroll-behavior: smooth;
+}
+
+// Scroll customisation for other web browsers
+::-webkit-scrollbar-thumb {
+    background-color: darkred;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}

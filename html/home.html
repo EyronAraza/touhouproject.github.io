@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Touhou Project</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../css/home-main.css">
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <!-- Link to JavaScript -->
+    <script defer src="../js/home-main.js"></script>
+    <script defer src="../js/home-parallax.js"></script>
+    <script defer src="../js/render-navbar-footer.js"></script>
+</head>
+<!-- 
+    REFERENCES PURPOSES
+    Comment over code: shift + alt + A
+    Tag over text: ctrl + shift + P then 'Emment'
+    Create tags efficiently: 'tagname.className' or 'tagname#idName'
+    Move code line: 'alt + up' or 'alt + down'
+    If want to position absolute of child inside parent container, parent's position should be 'relative'
+-->
+
+<body>
+    <!-- Create Navigation Bar through JS -->
+    <div id="navbar-container"></div>
+
+    <!-- BACKGROUND VIDEO -->
+    <div id="container-video">
+        <video id="video-bg" autoplay loop muted plays-inline>
+            <source src="../vid/touhou-bg-2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- PARALLAX CONTAINER -->
+    <div id="container-parallax">
+        <div id="parax-text-container">
+            <h1 id="h1-welcome">WELCOME TO <br><span id="h1-welcome-span">TOUHOU PROJECT</span></h1>
+            <p>An informative site on the series</p>
+            <button id="btn-get-started" type="button" onclick="scrolltToElement('container-boxes')">Get
+                Started</button>
+        </div>
+        <img id="parax-wave" src="../img/parallax-assets/wave.png" alt="wave">
+        <div id="parax-gradient-divider"></div>
+        <img id="parax-sakura-left" src="../img/parallax-assets/sakura-tree-l.png" alt="sakura-left">
+        <img id="parax-sakura-right" src="../img/parallax-assets/sakura-tree-r.png" alt="sakura-right">
+        <img id="parax-reimu" src="../img/parallax-assets/parax-reimu-2.png" alt="reimu">
+        <img id="parax-marisa" src="../img/parallax-assets/parax-marisa-2.png" alt="marisa">
+    </div>
+
+    <!-- CONTENT CONTAINER -->
+    <div id="container-content">
+        <!-- BOXES CONTAINER -->
+        <div id="container-boxes">
+            <!-- BOX 1 -->
+            <div class="box box-1">
+                <!-- Information -->
+                <div class="box-info">
+                    <h1>WHAT IS TOUHOU?</h1>
+                    <p>
+                        <span id="highlight-text-info">Touhou Project</span> (or simply called as <span
+                            id="highlight-text-info">Touhou</span>) is an <span id="highlight-text-info">
+                            indie Japanese 2D vertical-scrolling shooter
+                            video game series
+                        </span> mainly based on the genres "Bullet hell" and "Shoot 'em up". All of the games
+                        in the series are made by a sole Japanese developer ZUN.
+                        <br><br>
+                        The Shoot 'em up genre is basically controlling the player to move around and shoot the upcoming
+                        wave of enemies while dodging their attacks. But when you include the sub-genre "Bullet Hell",
+                        it is where you have to dodge a large amount of enemy bullets on the screen.
+                    </p>
+                </div>
+                <!-- Image (changes through hover) -->
+                <div class="container-box-img"
+                    onmouseout="changeImageOnHover('reimu-portrait', '../img/home/reimu-portrait-1.png')"
+                    onmouseover="changeImageOnHover('reimu-portrait', '../img/home/reimu-portrait-2.png')">
+                    <img class="box-img" id="reimu-portrait" src="../img/home/reimu-portrait-1.png"
+                        alt="reimu-portrait">
+                </div>
+            </div>
+
+            <!-- BOX 2 -->
+            <div class="box box-2">
+                <!-- Information -->
+                <div class="box-info">
+                    <h1>WHO CREATED TOUHOU?</h1>
+                    <p>
+                        <span id="highlight-text-info">Jun'ya Ota</span>, mostly known by his alias <span
+                            id="highlight-text-info">ZUN</span>, created the Touhou Project series entirely by himself
+                        including programming, composing music, designing and writing the story. He works under his
+                        company name "Team Shanghai Alice".
+                        <br><br>
+                        ZUN publicly released his first game, "Highly Responsive to Prayers", in 1997 on the PC-98
+                        computer and then he moved to Windows in 2002 to continue making games. He made a total of <span
+                            id="highlight-text-info">18 mainline games and 6 spin-offs</span> and his most recent game
+                        is "Touhou 18.5: 100th Black Market"
+                        released in Auguest 14, 2022. <span id="highlight-text-info">He is currently working on Touhou
+                            19!</span>
+                    </p>
+                </div>
+                <!-- Image -->
+                <div class="container-box-img">
+                    <img class="box-img" src="../img/home/ZUN.jpg" alt="reimu-portrait">
+                </div>
+            </div>
+
+            <!-- BOX 3 -->
+            <div class="box box-3">
+                <!-- Information -->
+                <div class="box-info">
+                    <h1>WHAT MAKES TOUHOU POPULAR?</h1>
+                    <p>
+                        Touhou is relatively popular with thousands of fans wordwide but it's largely popular in Japan.
+                        It is mostly because of <span id="highlight-text-info">the games' soundtracks are unique and
+                            catchy to hear</span> and <span id="highlight-text-info">
+                            the characters,
+                            mostly casted with females, are quite adorable and endearing.
+                        </span>
+                        <br><br>
+                        ZUN gave his fans the creative freedom to make any content or creations from his work. These
+                        kinds
+                        of content include song remixes, cosplays, fanarts, memes, animations and many more! Hence,
+                        getting his work recognised by people on the internet.
+                    </p>
+                </div>
+                <!-- Image -->
+                <div class="container-box-img">
+                    <img class="box-img" src="../img/home/touhou-fans.png" alt="reimu-portrait">
+                </div>
+            </div>
+
+            <!-- BOX 4 -->
+            <div class="box box-4">
+                <!-- Information -->
+                <div class="box-info">
+                    <h1>WHAT'S THE LORE OF TOUHOU?</h1>
+                    <p>
+                        The game's main setting revolves around <span id="highlight-text-info">the World of
+                            Gensokyo</span>, which is a magical sealed-off
+                        land inspired with elements of old Traditional Japanese culture and Japanese folktales. You can
+                        check its <a href="map.html" id="highlight-text-info">map</a> here.
+                        <br><br>
+                        The two main characters that feature in every game are <span id="highlight-text-info">Reimu
+                            Hakurei</span> and <span id="highlight-text-info">Marisa Kirisame</span>. They
+                        both follow similar objectives; solving an incident as well as finding the culprit who caused
+                        it. However, Reimu is more on teaching these culprits a lesson whereas Marisa is more on
+                        researching the incident and gaining magic powers.
+                    </p>
+                </div>
+                <!-- Image (changes through hover) -->
+                <div class="container-box-img"
+                    onmouseout="changeImageOnHover('marisa-portrait', '../img/home/marisa-portrait-1.png')"
+                    onmouseover="changeImageOnHover('marisa-portrait', '../img/home/marisa-portrait-2.png')">
+                    <img class="box-img character-portrait" id="marisa-portrait" src="../img/home/marisa-portrait-1.png"
+                        alt="reimu-portrait">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Footer through JS -->
+    <div id="footer-container"></div>
+</body>
+
+</html>

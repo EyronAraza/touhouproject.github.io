@@ -1,0 +1,62 @@
+/* For Mobile screens (under 480px) */
+@media screen and (max-width: 480px) {
+
+    /* PARALLAX CONTAINER */
+    #container-parallax {
+
+        // Text container
+        #parax-text-container {
+            #h1-welcome {
+                font-size: 2.5rem;
+                line-height: 50px;
+
+                #h1-welcome-span {
+                    -webkit-text-stroke: 1.3px white;
+                }
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+
+            // Button
+            #btn-get-started {
+                cursor: pointer;
+                padding: 5px;
+                width: 150px;
+                font-size: 1rem;
+                transition: 0s;
+
+                &:active {
+                    transform: scale(95%);
+                    background-color: lighten(#9C001F, 15%);
+                }
+            }
+        }
+
+        // Sakura tree
+        #parax-sakura-left {
+            width: 300px;
+            height: auto;
+        }
+
+        // Sakura tree
+        #parax-sakura-right {
+            width: 300px;
+            height: auto;
+        }
+
+        // Image Reimu
+        #parax-reimu {
+            width: 470px;
+            height: auto;
+        }
+
+        // Image Marisa
+        #parax-marisa {
+            width: 340px;
+            right: -150px;
+            height: auto;
+        }
+    }
+}

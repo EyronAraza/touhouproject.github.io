@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: darkred black; }
+
+body {
+  background-color: black; }
+
+html {
+  scroll-behavior: smooth; }
+
+::-webkit-scrollbar-thumb {
+  background-color: darkred; }
+
+::-webkit-scrollbar-track {
+  background-color: black; }
+
+/* Top Navigation Bar */
+nav {
+  position: fixed;
+  height: auto;
+  width: 100%;
+  background-color: rgba(100, 18, 41, 0.4);
+  box-shadow: 0px 0px 10px 0px black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 100;
+  transition: 0.5s; }
+  nav:hover {
+    background-color: #641229; }
+  nav #logo {
+    padding-left: 10px;
+    height: 63.2px;
+    width: 130px;
+    cursor: pointer;
+    padding-top: 10px;
+    transition: 0.5s; }
+    nav #logo:hover {
+      filter: drop-shadow(0px 0px 4px #ff4020); }
+  nav #menu-btn {
+    color: white;
+    position: absolute;
+    right: 30px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none; }
+  nav #checkbox-menubar {
+    display: none; }
+  nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 0px; }
+    nav ul li > .nav-link {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      transition: 0.5s; }
+      nav ul li > .nav-link:hover {
+        text-shadow: 0px 0px 3px white; }
+        nav ul li > .nav-link:hover .link-icon {
+          animation: hover-icon-animation 0.5s forwards; }
+        nav ul li > .nav-link:hover .link-icon-img {
+          filter: drop-shadow(0px 0px 2px white); }
+      nav ul li > .nav-link .link-icon {
+        position: relative;
+        color: white;
+        font-size: 30px;
+        opacity: 0; }
+      nav ul li > .nav-link .link-icon-img {
+        position: relative;
+        width: 40px;
+        height: 40px; }
+
+/* Hovering over navigation links to play icon animation */
+@keyframes hover-icon-animation {
+  from {
+    transform: translateX(20px);
+    opacity: 0; }
+  to {
+    transform: translateX(-15px);
+    opacity: 1; } }
+/* For Mobile screens (under 480px) */
+@media screen and (max-width: 480px) {
+  /* Top Navigation Bar */
+  nav {
+    z-index: 100;
+    display: flex;
+    flex-direction: row; }
+    nav #logo {
+      width: 86.6666666667px;
+      height: 42.1333333333px; }
+    nav ul {
+      position: fixed;
+      z-index: 100;
+      background-color: #4e0e20;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      top: 55px;
+      left: 100%;
+      height: 100vh;
+      transition: 0.5s;
+      padding-bottom: 70px;
+      padding-top: 70px;
+      gap: 70px; }
+      nav ul li > .nav-link {
+        transition: 0s; }
+        nav ul li > .nav-link:active {
+          transform: scale(0.95); }
+        nav ul li > .nav-link:hover {
+          text-shadow: 0px 0px 3px white; }
+          nav ul li > .nav-link:hover .link-icon {
+            animation: none; }
+        nav ul li > .nav-link .link-icon {
+          opacity: 1;
+          right: 20px; }
+    nav #menu-btn {
+      display: block; }
+      nav #menu-btn:active {
+        transform: scale(0.95); }
+
+  #checkbox-menubar:checked ~ ul {
+    left: 0; } }
+/* For Tablet screens (over 480px and under 800px) */
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  /* Top Navigation Bar */
+  nav {
+    z-index: 100;
+    display: flex;
+    flex-direction: row; }
+    nav #logo {
+      width: 130px;
+      height: 63.2px; }
+    nav ul {
+      position: fixed;
+      z-index: 100;
+      background-color: #4e0e20;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      top: 80px;
+      left: 100%;
+      height: 100vh;
+      transition: 0.5s;
+      padding-bottom: 70px;
+      padding-top: 70px;
+      gap: 70px; }
+      nav ul li > .nav-link {
+        transition: 0s; }
+        nav ul li > .nav-link:active {
+          transform: scale(0.95); }
+        nav ul li > .nav-link:hover {
+          text-shadow: 0px 0px 3px white; }
+          nav ul li > .nav-link:hover .link-icon {
+            animation: none; }
+        nav ul li > .nav-link .link-icon {
+          opacity: 1;
+          right: 20px; }
+    nav #menu-btn {
+      display: block; }
+      nav #menu-btn:active {
+        transform: scale(0.95); }
+
+  #checkbox-menubar:checked ~ ul {
+    left: 0; } }
+
+/*# sourceMappingURL=navbar.css.map */

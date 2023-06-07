@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- TOP NAVIGATION BAR -->
+    <nav>
+        <!-- Logo -->
+        <a href="home.html"><img src="../img/logo-touhou.png" alt="Touhou Project logo" id="logo"></a>
+
+        <!-- Menu Bar -->
+        <input type="checkbox" id="checkbox-menubar">
+        <label for="checkbox-menubar" id="menu-btn"><i class="fas fa-bars"></i></label>
+
+        <!-- Navigation Links -->
+        <ul>
+            <!-- HOME -->
+            <li class="list-link">
+                <a href="home.html" class="nav-link"><i class="link-icon fa-solid fa-house"></i>Home</a>
+            </li>
+
+            <!-- CHARACTERS -->
+            <li class="list-link">
+                <a href="characters.html" class="nav-link"><img class="link-icon link-icon-img"
+                        src="../img/character-icon.png">Characters</a>
+            </li>
+
+            <!-- MAPS -->
+            <li class="list-link">
+                <a href="map.html" class="nav-link"><i class="link-icon fa-solid fa-map"></i>Map</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

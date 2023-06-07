@@ -1,0 +1,262 @@
+$character-box-colors: #FB6A5A, #FDFEA5, #BBB5C6, #4FABE9, #AE6AAD;
+
+/* CONTENT CONTAINER: To contain all contents */
+#container-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    // Header text
+    #h1-characters {
+        margin-top: 100px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        font-size: 5rem;
+        text-shadow: 3px 3px black;
+        pointer-events: none;
+        color: #9C001F;
+        -webkit-text-stroke: 3px white;
+        z-index: 3;
+    }
+
+    // Character information window
+    #window-character-info {
+        position: absolute;
+        top: 20%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 55vh;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0px 0px 7px black;
+        overflow: hidden;
+        display: flex;
+        padding: 20px;
+        transform: scale(0);
+        animation: none;
+        z-index: 10;
+
+        // Close button
+        #btn-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 10px;
+            margin-right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        // Info Character image container
+        #container-character-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 75px;
+
+            // Info character image
+            #char-info-img {
+                width: auto;
+                height: 400px;
+            }
+        }
+
+        // Character Info container
+        #container-other-info {
+            color: black;
+            width: 100%;
+
+            // Divider
+            hr {
+                margin: 10px 0px;
+                opacity: 0.25;
+            }
+
+            // Character info name
+            #char-info-h1-name {
+                color: black;
+            }
+
+            // Character info description
+            #container-char-description {
+                width: 100%;
+                height: 19vh;
+                overflow: auto;
+            }
+
+            // Styling table (includes character types)
+            table {
+                border-collapse: collapse;
+                height: auto;
+                width: 100%;
+                font-size: 1.1rem;
+
+                // Styling table cells
+                td {
+                    //border: 1px solid black;
+                    font-weight: bold;
+                    text-align: left;
+                    padding: 10px 0;
+                }
+
+                // Style all table column 1
+                .table-col-1 {
+                    background-color: black;
+                    border-radius: 50px;
+                    color: white;
+                    padding: 2px 12px;
+                }
+
+                // Style all table column 2
+                .table-col-2 {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+
+    // Style all input radios
+    input[type=radio] {
+        display: none;
+        position: relative;
+        bottom: 100px;
+    }
+
+    /* CHARACTERS CONTENT CONTAINER */
+    #container-characters {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        padding: 30px 0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        /* CHARACTER BOXES CONTAINER */
+        #container-box-char {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            transform: scale(1);
+            animation: none;
+
+            // Style all character boxes
+            .box-char {
+                //width: 220px;
+                //height: 420px;
+                width: 15vw;
+                height: 60vh;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                cursor: pointer;
+                flex-grow: 0;
+                flex-shrink: 0;
+                box-shadow: 0px 0px 7px black;
+                transition: 0.5s;
+
+                // Style box's character image
+                .box-char-portrait {
+                    width: auto;
+                    height: 400px;
+                    transition: 0.5s;
+                }
+
+                // Hover over character boxes
+                &:hover {
+                    transform: scale(110%);
+
+                    .box-char-portrait {
+                        filter: drop-shadow(0 0 6px white);
+                    }
+                }
+            }
+        }
+
+        // Loop through character boxes
+        @for $i from 1 through length($character-box-colors) {
+            .box-char-#{$i} {
+                // Change its background color
+                background-color: rgba(nth($character-box-colors, $i), 0.5);
+            }
+        }
+    }
+
+    /* BACKGROUND IMAGE */
+    #img-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/character-backgrounds/marisa_bg.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        z-index: -2;
+        opacity: 1;
+        animation: none;
+    }
+
+    /* BACKGROUND COVERAGE (to create some kind of darkness to the background image) */
+    #background-coverage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.4);
+        z-index: -2;
+    }
+}
+
+// Appear animation
+@keyframes anim-open {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+// Disappear animation
+@keyframes anim-close {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+// Background image transition animation
+@keyframes anim-bg-transition {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* For Tablet screens (over 480px and under 800px) */
+@import 'characters-tablet';
+
+/* For Mobile screens (under 480px) */
+@import 'characters-phone';

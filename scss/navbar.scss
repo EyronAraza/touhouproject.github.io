@@ -1,0 +1,212 @@
+@import 'main';
+
+// Navigation Bar customisation
+$nav-bar-bgcolor: rgba(100, 18, 41, 0.4);
+$nav-bar-bgcolor-hovered: rgba(100, 18, 41, 1);
+$nav-bar-height: auto;
+$nav-bar-width: 100%;
+$nav-bar-links-color: white;
+$nav-bar-links-size: 1.3rem;
+$nav-bar-links-horizontal-gap: 5rem;
+$nav-bar-logo-height: 158px / 2.5;
+$nav-bar-logo-width: 325px / 2.5;
+
+// Navigation Bar customisation responsive
+$R-nav-bar-links-vertical-gap: 70px;
+
+/* Top Navigation Bar */
+nav {
+    position: fixed;
+    height: $nav-bar-height;
+    width: $nav-bar-width;
+    background-color: $nav-bar-bgcolor;
+    box-shadow: 0px 0px 10px 0px black;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 100;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: $nav-bar-bgcolor-hovered;
+    }
+
+    // Logo
+    #logo {
+        padding-left: 10px;
+        height: $nav-bar-logo-height;
+        width: $nav-bar-logo-width;
+        cursor: pointer;
+        padding-top: 10px;
+        transition: 0.5s;
+
+        // Hover over logo
+        &:hover {
+            filter: drop-shadow(0px 0px 4px #ff4020)
+        }
+    }
+
+    // Menu bar
+    #menu-btn {
+        color: $nav-bar-links-color;
+        position: absolute;
+        right: 30px;
+        font-size: 2rem;
+        cursor: pointer;
+        display: none;
+    }
+
+    // Checkbox for menu bar
+    #checkbox-menubar {
+        display: none;
+    }
+
+    // Unordered lists with links
+    ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $nav-bar-links-horizontal-gap;
+        margin-bottom: 0px;
+
+        // Links (anchor)
+        li>.nav-link {
+            text-decoration: none;
+            color: $nav-bar-links-color;
+            font-weight: 600;
+            font-size: $nav-bar-links-size;
+            display: flex;
+            align-items: center;
+            transition: 0.5s;
+
+            // Hover over links
+            &:hover {
+                text-shadow: 0px 0px 3px white;
+
+                // Play icon animation
+                .link-icon {
+                    animation: hover-icon-animation 0.5s forwards;
+                }
+
+                .link-icon-img {
+                    filter: drop-shadow(0px 0px 2px white)
+                }
+            }
+
+            // Link icons
+            .link-icon {
+                position: relative;
+                color: white;
+                font-size: 30px;
+                opacity: 0;
+            }
+
+            // Link icon that is an img
+            .link-icon-img {
+                position: relative;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+/* Hovering over navigation links to play icon animation */
+@keyframes hover-icon-animation {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-15px);
+        opacity: 1;
+    }
+}
+
+// For adding responsive values to both phone and tablet
+@mixin nav-bar-responsive($nav-ul-top, $logo-width, $logo-height) {
+
+    /* Top Navigation Bar */
+    nav {
+        z-index: 100;
+        display: flex;
+        flex-direction: row;
+
+        #logo {
+            width: $logo-width;
+            height: $logo-height;
+        }
+
+        // Unordered lists
+        ul {
+            position: fixed;
+            z-index: 100;
+            background-color: darken($nav-bar-bgcolor-hovered, 5%);
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            top: $nav-ul-top;
+            left: 100%;
+            height: 100vh;
+            transition: 0.5s;
+            padding-bottom: $R-nav-bar-links-vertical-gap;
+            padding-top: $R-nav-bar-links-vertical-gap;
+            gap: $R-nav-bar-links-vertical-gap;
+
+            // Links (anchored)
+            li>.nav-link {
+                transition: 0s;
+
+                // Click effect
+                &:active {
+                    transform: scale(0.95);
+                }
+
+                // Hover over links
+                &:hover {
+                    text-shadow: 0px 0px 3px white;
+
+                    .link-icon {
+                        animation: none;
+                    }
+                }
+
+                // Link icons
+                .link-icon {
+                    opacity: 1;
+                    right: 20px;
+                }
+            }
+
+        }
+
+        // Make menu bar appear
+        #menu-btn {
+            display: block;
+
+            // Click effect
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    // If menu bar is clicked
+    #checkbox-menubar:checked~ul {
+        left: 0;
+    }
+}
+
+/* For Mobile screens (under 480px) */
+@media screen and (max-width: 480px) {
+    @include nav-bar-responsive(55px, $nav-bar-logo-width/1.5, $nav-bar-logo-height/1.5);
+}
+
+/* For Tablet screens (over 480px and under 800px) */
+@media screen and (min-width: 480px) and (max-width: 800px) {
+    @include nav-bar-responsive(80px, $nav-bar-logo-width, $nav-bar-logo-height);
+}

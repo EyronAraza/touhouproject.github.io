@@ -1,0 +1,51 @@
+/* For Tablet screens (over 480px and under 800px) */
+@media screen and (min-width: 480px) and (max-width: 800px) {
+
+    /* PARALLAX CONTAINER */
+    #container-parallax {
+
+        // Text container
+        #parax-text-container {
+            p {
+                font-size: 2rem;
+            }
+
+            // Button
+            #btn-get-started {
+                cursor: pointer;
+                padding: 10px;
+                font-size: 1.5rem;
+                transition: 0s;
+
+                &:active {
+                    transform: scale(95%);
+                    background-color: lighten(#9C001F, 15%);
+                }
+            }
+        }
+
+        // Sakura tree
+        #parax-sakura-left {
+            width: 400px;
+            height: auto;
+        }
+
+        // Sakura tree
+        #parax-sakura-right {
+            width: 400px;
+            height: auto;
+        }
+
+        // Image Reimu
+        #parax-reimu {
+            width: 570px;
+            height: auto;
+        }
+
+        // Image Marisa
+        #parax-marisa {
+            width: 400px;
+            height: auto;
+        }
+    }
+}

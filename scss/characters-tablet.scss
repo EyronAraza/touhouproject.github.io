@@ -1,0 +1,84 @@
+/* For Tablet screens (over 480px and under 800px) */
+@media screen and (min-width: 480px) and (max-width: 800px) {
+
+    /* CONTENT CONTAINER: To contain all contents */
+    #container-content {
+        height: auto;
+
+        #h1-characters {
+            padding: 0;
+            margin-top: 120px;
+        }
+
+        // Character information window
+        #window-character-info {
+            position: fixed;
+            top: 15%;
+            width: 90%;
+            height: 80vh;
+            flex-direction: column;
+            transform: scale(0);
+            overflow: auto;
+
+            // Close button
+            #btn-close {
+                font-size: 3.5rem;
+            }
+
+            // Info Character image container
+            #container-character-img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 40px;
+
+                // Info character image
+                #char-info-img {
+                    width: auto;
+                    height: 500px;
+                }
+            }
+
+            // Character Info container
+            #container-other-info {
+
+                // Character info description
+                #container-char-description {
+                    height: auto;
+                }
+            }
+        }
+
+        /* CHARACTERS CONTENT CONTAINER */
+        #container-characters {
+            position: static;
+            top: 0;
+            left: 0;
+            transform: none;
+
+            /* CHARACTER BOXES CONTAINER */
+            #container-box-char {
+                width: 100%;
+                height: 100%;
+                justify-content: start;
+                align-items: start;
+                gap: 50px;
+                padding: 10px 50px;
+                overflow-x: auto;
+
+                // Style all character boxes
+                .box-char {
+                    width: 75vw;
+                    height: 75vh;
+
+                    // Style box's character image
+                    .box-char-portrait {
+                        width: auto;
+                        height: 800px;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}

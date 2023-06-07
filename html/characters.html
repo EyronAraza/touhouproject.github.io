@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters | Touhou Project</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../css/characters-main.css">
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <!-- Link to JavaScript -->
+    <script defer src="../js/render-navbar-footer.js"></script>
+    <script defer src="../js/character-info-storage.js"></script>
+    <script defer src="../js/character-main.js"></script>
+</head>
+
+<body>
+    <!-- Create Navigation Bar through JS -->
+    <div id="navbar-container"></div>
+
+    <!-- CONTENT CONTAINER -->
+    <div id="container-content">
+        <!-- Bacbkground Image -->
+        <div id="img-background"></div>
+
+        <!-- Background Coverage -->
+        <div id="background-coverage"></div>
+
+        <!-- Header -->
+        <h1 id="h1-characters">CHARACTERS</h1>
+
+        <!-- Character Content Container -->
+        <div id="container-characters">
+            <!-- Character Boxes Container -->
+            <div id="container-box-char">
+                <!-- Character 1: Reimu -->
+                <label for="radio-1">
+                    <div class="box-char box-char-1">
+                        <img class="box-char-portrait" src="../img/character-portraits/reimu.png" alt="reimu">
+                    </div>
+                </label>
+
+                <!-- Character 2: Marisa -->
+                <label for="radio-2">
+                    <div class="box-char box-char-2">
+                        <img class="box-char-portrait" src="../img/character-portraits/marisa.png" alt="reimu">
+                    </div>
+                </label>
+
+                <!-- Character 3: Cirno -->
+                <label for="radio-3">
+                    <div class="box-char box-char-3">
+                        <img class="box-char-portrait" src="../img/character-portraits/sakuya.png" alt="reimu">
+                    </div>
+                </label>
+
+                <!-- Character 4: Sakuya -->
+                <label for="radio-4">
+                    <div class="box-char box-char-4">
+                        <img class="box-char-portrait" src="../img/character-portraits/cirno.png" alt="reimu">
+                    </div>
+                </label>
+
+                <!-- Character 5: Yukari -->
+                <label for="radio-5">
+                    <div class="box-char box-char-5">
+                        <img class="box-char-portrait" src="../img/character-portraits/yukari.png" alt="reimu">
+                    </div>
+                </label>
+            </div>
+
+            <!-- RADIO BUTTONS FOR EACH CHARACTER -->
+            <input type="radio" name="radio-characters" id="radio-1">
+            <input type="radio" name="radio-characters" id="radio-2">
+            <input type="radio" name="radio-characters" id="radio-3">
+            <input type="radio" name="radio-characters" id="radio-4">
+            <input type="radio" name="radio-characters" id="radio-5">
+
+            <!-- Character window pop up information (info updated through JS) -->
+            <div id="window-character-info">
+                <div id="btn-close"><i class="fa-sharp fa-solid fa-xmark"></i></div>
+                <!-- Image of character -->
+                <div id="container-character-img">
+                    <img id="char-info-img" src="../img/character-portraits/marisa.png" alt="reimu">
+                </div>
+
+                <!-- Info of character -->
+                <div id="container-other-info">
+                    <!-- Character name -->
+                    <h1 id="char-info-h1-name">CHARACTER NAME</h1>
+
+                    <!-- Character types -->
+                    <table>
+                        <!-- CHANGE COLUMN SIZE -->
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 80%;">
+                        </colgroup>
+
+                        <!-- Type 1 -->
+                        <tr>
+                            <td><span class="table-col-1">&nbspSpecies:&nbsp</span></td>
+                            <td>
+                                <p class="table-col-2" id="char-species">------</p>
+                            </td>
+                        </tr>
+
+                        <!-- Type 2 -->
+                        <tr>
+                            <td><span class="table-col-1">&nbspAbility:&nbsp</span></td>
+                            <td>
+                                <p class="table-col-2" id="char-ability">------</p>
+                            </td>
+                        </tr>
+
+                        <!-- Type 3 -->
+                        <tr>
+                            <td><span class="table-col-1">&nbspOccupation:&nbsp</span></td>
+                            <td>
+                                <p class="table-col-2" id="char-occupation">------</p>
+                            </td>
+                        </tr>
+
+                        <!-- Type 4 -->
+                        <tr>
+                            <td><span class="table-col-1">&nbspLocation:&nbsp</span></td>
+                            <td>
+                                <p class="table-col-2" id="char-location">------</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <!-- Character description -->
+                    <div id="container-char-description">
+                        <p id="char-description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatem dolor
+                            sapiente ipsa adipisci a aspernatur natus, modi ipsum ullam atque, velit similique cum in
+                            voluptas iste, animi exercitationem cumque numquam obcaecati! In fuga nam velit deserunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create footer through JS -->
+    <div id="footer-container"></div>
+</body>
+
+</html>
