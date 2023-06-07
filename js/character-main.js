@@ -7,7 +7,7 @@ const charBoxes = document.querySelectorAll('.box-char')
 
 // References: Background image
 const mainBackgroundImage = document.getElementById('img-background')
-const backgroundImageLocation = "../img/character-backgrounds/"
+const backgroundImageLocation = "img/character-backgrounds/"
 const backgroundImagesArr = ["reimu_bg.png", "marisa_bg.jpg", "sakuya_bg.jpg", "cirno_bg.jpg", "yukari_bg.jpg"]
 
 // References: Character information

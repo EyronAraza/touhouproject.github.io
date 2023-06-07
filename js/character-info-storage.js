@@ -1,5 +1,5 @@
 // get location of images
-const imageLocation = "../img/character-portraits/"
+const imageLocation = "img/character-portraits/"
 
 // Objects to store character information
 const characterStorage = {

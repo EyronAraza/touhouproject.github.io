@@ -9,7 +9,7 @@ fetch('navbar.html')
 
     // Create a script element and get JavaScript file location
     const scriptElement = document.createElement('script')
-    scriptElement.src = '../js/navbar.js'
+    scriptElement.src = 'js/navbar.js'
 
     // Add the script element to the body
     document.body.appendChild(scriptElement)
@@ -30,7 +30,7 @@ fetch('footer.html')
 
     // Create a script element and get JavaScript file location
     const scriptElementFooter = document.createElement('script')
-    scriptElementFooter.src = '../js/footer.js'
+    scriptElementFooter.src = 'js/footer.js'
 
     // Add the script element to the body
     document.body.appendChild(scriptElementFooter)
